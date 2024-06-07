@@ -120,7 +120,7 @@ h1, h2, h3, p, span, a{
 
 /* Popular Games Carousel */
 .populargames-main-container{
-    padding:20px 0 70px 0;
+    padding:20px 0 30px 0;
 }
 #populargames .slick-prev {
     top: 90px;
@@ -142,7 +142,7 @@ h1, h2, h3, p, span, a{
     transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
 }
 
-.item-image:hover .demo-play {
+#populargames .item-image:hover .demo-play {
     opacity: 1; /* Show on hover */
     transform: translateY(0); /* Move into view */
 }
@@ -191,7 +191,7 @@ h1, h2, h3, p, span, a{
 }
 .info-hide-container {
     display: none; /* Initially hide */
-    margin-top: -55px;
+    margin-top: -50px;
     z-index:5;
 }
 .game-description{
@@ -201,7 +201,31 @@ h1, h2, h3, p, span, a{
 .icons:hover + .info-hide-container {
     display: block; /* Show when the icon is hovered */
 }
+/*END*/
+
+/*CASINO GAMES Carousel*/
+.casinogames-main-container{
+    padding:20px 0 70px 0;
+}
+#casinogames .slick-prev {
+    top: 90px;
+    z-index: 1;
+}
+
+#casinogames .slick-next {
+    top: 90px;
+}
+.casinogames-title h5{
+    font-size:15px;
+}
+
+
+
+
+/*END*/
+
 @media (max-width: 1300px){
+    /*Popular Games Carousel*/
     .info-hide p{
         font-size:11px;
     }
@@ -211,6 +235,7 @@ h1, h2, h3, p, span, a{
     .game-description p{
         font-size:11px;
     }
+    /*END*/
 }
 
 @media (max-width: 600px) {
@@ -237,8 +262,9 @@ h1, h2, h3, p, span, a{
 
     /* Popular Games Carousel */
     .populargames-main-container{
-        padding:30px 15px 50px 15px;
+        padding:30px 15px;
     }
+    /*END*/
     
 }
 

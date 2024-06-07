@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $('#banner').slick({
-        infinite: true,
+        infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
@@ -10,7 +10,7 @@ $(document).ready(function(){
     });
 
     $('#promotion').slick({
-        infinite: true,
+        infinite: false,
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
@@ -97,6 +97,57 @@ $(document).ready(function(){
         });
     }
 
+
+    var $casinogamesSlider = $('#casinogames');
+
+    // Check if #populargames slider exists
+    if ($casinogamesSlider.length > 0) {
+        // Initialize the slick slider
+        $casinogamesSlider.slick({
+            infinite: false,
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true,
+            dots: false,
+            prevArrow: '<button type="button" class="slick-prev"></button>',
+            nextArrow: '<button type="button" class="slick-next"></button>',
+            centerMode: false, // Set centerMode to false
+            centerPadding: '0px', // Adjust the center padding
+            responsive: [
+                {
+                    breakpoint: 1500,
+                    settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 5,
+                    }
+                },
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                }
+            ]
+        });
+    }
+
     const iconsList = document.querySelectorAll('.icons');
 
     iconsList.forEach(icon => {
@@ -118,7 +169,6 @@ $(document).ready(function(){
         container.style.left = 0;
         container.style.width = '100%';
         container.style.height = '100%';
-        container.style.position = 'fixed';
         container.style.background = 'rgba(0, 0, 0, 0.5)';
         container.style.zIndex = '9999';
     }
