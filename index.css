@@ -20,7 +20,7 @@
 }
 
 body {
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     font-family: 'Open Sans', sans-serif;
 }
 h1, h2, h3, p, span, a{
