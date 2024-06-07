@@ -22,6 +22,7 @@
 body {
     overflow-x: hidden !important;
     font-family: 'Open Sans', sans-serif;
+    margin: 0;
 }
 h1, h2, h3, p, span, a{
     font-family: 'Open Sans', sans-serif;
@@ -29,6 +30,11 @@ h1, h2, h3, p, span, a{
 /*Banner Carousel*/
 #banner .item img {
     z-index: -1;
+}
+
+.slick-slider{
+    overflow-x: hidden;
+   
 }
 .slick-dots {
     position: absolute;
@@ -64,7 +70,10 @@ h1, h2, h3, p, span, a{
     height: 8px; /* height for active dot */
     opacity: 1; /* make sure the active dot is fully opaque */
 }
-
+.slick-next,
+.slick-prev{
+    z-index: 99999;
+}
 /* Promotion Carousel */
 .slick-prev, .slick-next {
     background: var(--light-gray) !important;
@@ -79,13 +88,13 @@ h1, h2, h3, p, span, a{
     justify-content: center;
 }
 
-#promotion .slick-prev {
-    left: -15px;
+.slick-prev {
+    left: 25px;
     z-index: 1;
 }
 
-#promotion .slick-next {
-    right: -15px;
+.slick-next {
+    right: 25px;
 }
 
 .slick-prev:hover, .slick-next:hover {
@@ -119,15 +128,6 @@ h1, h2, h3, p, span, a{
 }
 
 /* Popular Games Carousel */
-#populargames .slick-prev {
-    top: 90px;
-    z-index: 1;
-}
-
-#populargames .slick-next {
-    top: 90px;
-}
-
 .demo-play {
     background-color: var(--medium-gray);
     transform: translateY(100%); /* Start from below */
@@ -182,23 +182,11 @@ h1, h2, h3, p, span, a{
 }
 /*END*/
 
-/*CASINO GAMES Carousel*/
-#casinogames .slick-prev {
-    top: 90px;
-    z-index: 1;
-}
-
-#casinogames .slick-next {
-    top: 90px;
-}
-/*END*/
-
-/*CASINO GAMES Carousel*/
-#instantgames .slick-prev {
-    top: 90px;
-    z-index: 1;
-}
-
+#populargames .slick-prev,
+#casinogames .slick-prev,
+#instantgames .slick-prev,
+#populargames .slick-next,
+#casinogames .slick-next,
 #instantgames .slick-next {
     top: 90px;
 }
@@ -208,7 +196,9 @@ h1, h2, h3, p, span, a{
 .main-container{
     padding:20px 0;
 }
-
+.slider-container{
+    padding:5px 50px;
+}
 .title{
     font-size:15px;
 }
@@ -243,9 +233,6 @@ h1, h2, h3, p, span, a{
 }
 
 @media (max-width: 600px) {
-    body{
-        overflow-x: hidden !important;
-    }
     /* Banner Carousel */
     .slick-dots {
         left: 28px;
@@ -258,31 +245,35 @@ h1, h2, h3, p, span, a{
     }
     /*END*/
     /* Promotion Carousel */
+    
+
     .slick-prev {
-        left: 0;
-    }
-
-    .slick-next {
-        right: 0;
-    }
-
-    #promotion .slick-prev {
         left: 15px;
     }
     
-    #promotion .slick-next {
+    .slick-next {
         right: 15px;
     }
     /*END*/
 
     /* Popular Games Carousel */
     .main-container{
-        padding:25px 15px;
+        padding:25px 0px;
+    }
+    .slider-container{
+        padding:5px 30px;
     }
     /*END*/
     
 }
 
 @media (max-width: 500px) {
-    
+    #populargames .slick-prev,
+    #casinogames .slick-prev,
+    #instantgames .slick-prev,
+    #populargames .slick-next,
+    #casinogames .slick-next,
+    #instantgames .slick-next {
+    top: 70px;
+}
 }
