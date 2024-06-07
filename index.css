@@ -20,22 +20,22 @@
 }
 
 body {
-    overflow-x: hidden !important;
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-}
-h1, h2, h3, p, span, a{
     font-family: 'Open Sans', sans-serif;
 }
-/*Banner Carousel*/
+
+h1, h2, h3, p, span, a {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Banner Carousel */
 #banner .item img {
     z-index: -1;
 }
 
-.slick-slider{
+.slick-slider {
     overflow-x: hidden;
-   
 }
+
 .slick-dots {
     position: absolute;
     bottom: 1%;
@@ -49,15 +49,16 @@ h1, h2, h3, p, span, a{
 .slick-dots li {
     margin: 0 5px;
 }
+
 .slick-dots li button:before {
     font-size: 10px;
-    color: var(--gray); /* default color for inactive dots */
+    color: var(--gray);
     width: 10px;
     height: 10px;
     border-radius: 25px;
     display: inline-block;
-    content: ''; /* remove the default dot content */
-    background-color: var(--gray); ;
+    content: '';
+    background-color: var(--gray);
 }
 
 .slick-dots li.slick-active {
@@ -65,15 +66,17 @@ h1, h2, h3, p, span, a{
 }
 
 .slick-dots li.slick-active button:before {
-    background-color: var(--yellow); /* color for active dot */
-    width: 30px; /* width for active dot */
-    height: 8px; /* height for active dot */
-    opacity: 1; /* make sure the active dot is fully opaque */
+    background-color: var(--yellow);
+    width: 30px;
+    height: 8px;
+    opacity: 1;
 }
+
 .slick-next,
-.slick-prev{
+.slick-prev {
     z-index: 99999;
 }
+
 /* Promotion Carousel */
 .slick-prev, .slick-next {
     background: var(--light-gray) !important;
@@ -102,27 +105,24 @@ h1, h2, h3, p, span, a{
     color: var(--green);
 }
 
-/* Additional styles for default arrows */
 .slick-prev::before, .slick-next::before {
-    content: ''; /* Clear default content */
+    content: '';
 }
 
-/* Use Font Awesome 6 icons for navigation arrows */
 .slick-prev::before {
-    font-family: 'Font Awesome Kit'; /* Specify Font Awesome */
+    font-family: 'Font Awesome Kit';
     font: var(--fa-font-solid);
-    content: '\f053'; /* Unicode for left chevron icon */
+    content: '\f053';
     color: var(--green);
 }
 
 .slick-next::before {
-    font-family: 'Font Awesome 6 Free'; /* Specify Font Awesome */
+    font-family: 'Font Awesome 6 Free';
     font: var(--fa-font-solid);
-    content: '\f054'; /* Unicode for right chevron icon */
+    content: '\f054';
     color: var(--green);
 }
 
-/* Custom styles for active and hover states */
 .slick-prev:hover::before, .slick-next:hover::before {
     color: var(--green);
 }
@@ -130,13 +130,13 @@ h1, h2, h3, p, span, a{
 /* Popular Games Carousel */
 .demo-play {
     background-color: var(--medium-gray);
-    transform: translateY(100%); /* Start from below */
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    transform: translateY(100%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 #populargames .item-image:hover .demo-play {
-    opacity: 1; /* Show on hover */
-    transform: translateY(0); /* Move into view */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .demo-play .demo,
@@ -150,8 +150,9 @@ h1, h2, h3, p, span, a{
 .demo-play .play:hover {
     background: var(--orange);
 }
+
 .demo-play .demo,
-.demo-play .play{
+.demo-play .play {
     width: var(--button-width);
 }
 
@@ -159,28 +160,32 @@ h1, h2, h3, p, span, a{
     background: var(--blue);
     width: var(--highlights-width);
 }
-.info-hide{
+
+.info-hide {
     background: var(--light-gray);
 }
-.info-hide p{
-    font-size:15px;
+
+.info-hide p {
+    font-size: 15px;
 }
+
 .icons {
     cursor: pointer;
 }
+
 .info-hide-container {
-    display: none; /* Initially hide */
+    display: none;
     margin-top: -50px;
-    z-index:5;
+    z-index: 5;
 }
-.game-description{
+
+.game-description {
     z-index: -1;
 }
 
 .icons:hover + .info-hide-container {
-    display: block; /* Show when the icon is hovered */
+    display: block;
 }
-/*END*/
 
 #populargames .slick-prev,
 #casinogames .slick-prev,
@@ -188,23 +193,30 @@ h1, h2, h3, p, span, a{
 #populargames .slick-next,
 #casinogames .slick-next,
 #instantgames .slick-next {
-    top: 90px;
+    top: 80px;
 }
-/*END*/
 
-/*OVERALL STYLES*/
-.main-container{
-    padding:20px 0;
+/* Overall Styles */
+.main-container {
+    padding: 20px 0;
 }
-.slider-container{
-    padding:5px 50px;
+
+.container-title {
+    padding: 0 60px;
 }
-.title{
-    font-size:15px;
+
+.slider-container {
+    padding: 0 50px;
 }
-.game-description p{
-    font-size:13px;
+
+.title {
+    font-size: 15px;
 }
+
+.game-description p {
+    font-size: 13px;
+}
+
 .hot {
     background: var(--orange);
 }
@@ -212,28 +224,29 @@ h1, h2, h3, p, span, a{
 .new {
     background: var(--red);
 }
+
 .hot,
 .new {
     padding: 2px 8px;
     font-size: 13px;
 }
 
-@media (max-width: 1300px){
-    /*Popular Games Carousel*/
-    .info-hide p{
-        font-size:11px;
+/* Responsive Styles */
+@media (max-width: 1300px) {
+    .info-hide p {
+        font-size: 11px;
     }
-    .title{
-        font-size:13px;
+
+    .title {
+        font-size: 13px;
     }
-    .game-description p{
-        font-size:11px;
+
+    .game-description p {
+        font-size: 11px;
     }
-    /*END*/
 }
 
 @media (max-width: 600px) {
-    /* Banner Carousel */
     .slick-dots {
         left: 28px;
     }
@@ -243,28 +256,26 @@ h1, h2, h3, p, span, a{
         width: 20px;
         height: 5px;
     }
-    /*END*/
-    /* Promotion Carousel */
-    
 
     .slick-prev {
         left: 15px;
     }
-    
+
     .slick-next {
         right: 15px;
     }
-    /*END*/
 
-    /* Popular Games Carousel */
-    .main-container{
-        padding:25px 0px;
+    .main-container {
+        padding: 15px 0px;
     }
-    .slider-container{
-        padding:5px 30px;
+
+    .container-title {
+        padding: 0 40px;
     }
-    /*END*/
-    
+
+    .slider-container {
+        padding: 0 30px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -274,6 +285,6 @@ h1, h2, h3, p, span, a{
     #populargames .slick-next,
     #casinogames .slick-next,
     #instantgames .slick-next {
-    top: 70px;
-}
+        top: 70px;
+    }
 }
