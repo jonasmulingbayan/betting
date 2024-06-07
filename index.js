@@ -100,7 +100,7 @@ $(document).ready(function(){
 
     var $casinogamesSlider = $('#casinogames');
 
-    // Check if #populargames slider exists
+    // Check if #casino slider exists
     if ($casinogamesSlider.length > 0) {
         // Initialize the slick slider
         $casinogamesSlider.slick({
@@ -147,6 +147,57 @@ $(document).ready(function(){
             ]
         });
     }
+
+    var $instantgamesSlider = $('#instantgames');
+
+    // Check if #casino slider exists
+    if ($instantgamesSlider.length > 0) {
+        // Initialize the slick slider
+        $instantgamesSlider.slick({
+            infinite: false,
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            arrows: true,
+            dots: false,
+            prevArrow: '<button type="button" class="slick-prev"></button>',
+            nextArrow: '<button type="button" class="slick-next"></button>',
+            centerMode: false, // Set centerMode to false
+            centerPadding: '0px', // Adjust the center padding
+            responsive: [
+                {
+                    breakpoint: 1500,
+                    settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 5,
+                    }
+                },
+                {
+                    breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 4,
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                    }
+                }
+            ]
+        });
+    }
+
 
     const iconsList = document.querySelectorAll('.icons');
 
