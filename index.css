@@ -1,5 +1,4 @@
-/* Define CSS variables */
-:root {
+:root{
     --orange: rgb(243, 100, 47);
     --green: rgb(18, 233, 18);
     --blue: rgb(59, 158, 240);
@@ -14,25 +13,23 @@
     --highlights-width: 90px;
 }
 
-/* Reset default margin, padding, and box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* General body styles */
 body {
     overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
 }
-
-/* Specify font-family for specific elements */
-h1, h2, h3, p, span, a {
+h1, h2, h3, p, span, a{
     font-family: 'Open Sans', sans-serif;
 }
-
-/* Styles for carousel dots */
+/*Banner Carousel*/
+#banner .item img {
+    z-index: -1;
+}
 .slick-dots {
     position: absolute;
     bottom: 1%;
@@ -46,16 +43,15 @@ h1, h2, h3, p, span, a {
 .slick-dots li {
     margin: 0 5px;
 }
-
 .slick-dots li button:before {
     font-size: 10px;
-    color: var(--gray);
+    color: var(--gray); /* default color for inactive dots */
     width: 10px;
     height: 10px;
     border-radius: 25px;
     display: inline-block;
-    content: '';
-    background-color: var(--gray);
+    content: ''; /* remove the default dot content */
+    background-color: var(--gray); ;
 }
 
 .slick-dots li.slick-active {
@@ -63,15 +59,14 @@ h1, h2, h3, p, span, a {
 }
 
 .slick-dots li.slick-active button:before {
-    background-color: var(--yellow);
-    width: 30px;
-    height: 8px;
-    opacity: 1;
+    background-color: var(--yellow); /* color for active dot */
+    width: 30px; /* width for active dot */
+    height: 8px; /* height for active dot */
+    opacity: 1; /* make sure the active dot is fully opaque */
 }
 
-/* Styles for carousel navigation arrows */
-.slick-prev,
-.slick-next {
+/* Promotion Carousel */
+.slick-prev, .slick-next {
     background: var(--light-gray) !important;
     border: none;
     cursor: pointer;
@@ -84,132 +79,199 @@ h1, h2, h3, p, span, a {
     justify-content: center;
 }
 
-/* Position arrows for promotion carousel */
 #promotion .slick-prev {
     left: -15px;
+    z-index: 1;
 }
 
 #promotion .slick-next {
     right: -15px;
 }
 
-/* Hover styles for arrows */
-.slick-prev:hover,
-.slick-next:hover {
+.slick-prev:hover, .slick-next:hover {
     background: var(--light-gray);
     color: var(--green);
 }
 
-/* Specify Font Awesome icons for arrows */
-.slick-prev::before,
-.slick-next::before {
-    content: '';
+/* Additional styles for default arrows */
+.slick-prev::before, .slick-next::before {
+    content: ''; /* Clear default content */
 }
 
+/* Use Font Awesome 6 icons for navigation arrows */
 .slick-prev::before {
-    font-family: 'Font Awesome Kit';
+    font-family: 'Font Awesome Kit'; /* Specify Font Awesome */
     font: var(--fa-font-solid);
-    content: '\f053';
+    content: '\f053'; /* Unicode for left chevron icon */
     color: var(--green);
 }
 
 .slick-next::before {
-    font-family: 'Font Awesome 6 Free';
+    font-family: 'Font Awesome 6 Free'; /* Specify Font Awesome */
     font: var(--fa-font-solid);
-    content: '\f054';
+    content: '\f054'; /* Unicode for right chevron icon */
     color: var(--green);
 }
 
-/* Hover styles for arrow icons */
-.slick-prev:hover::before,
-.slick-next:hover::before {
+/* Custom styles for active and hover states */
+.slick-prev:hover::before, .slick-next:hover::before {
     color: var(--green);
 }
 
-/* Additional styles for specific carousels */
-#promotion .slick-prev,
-#populargames .slick-prev,
-#casinogames .slick-prev,
-#instantgames .slick-prev,
-#promotion .slick-next,
-#populargames .slick-next,
-#casinogames .slick-next,
-#instantgames .slick-next {
+/* Popular Games Carousel */
+#populargames .slick-prev {
     top: 90px;
     z-index: 1;
 }
 
-#populargames .slick-prev,
 #populargames .slick-next {
     top: 90px;
 }
 
-/* Styles for demo play buttons */
+.demo-play {
+    background-color: var(--medium-gray);
+    transform: translateY(100%); /* Start from below */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+}
+
+#populargames .item-image:hover .demo-play {
+    opacity: 1; /* Show on hover */
+    transform: translateY(0); /* Move into view */
+}
+
 .demo-play .demo,
-.demo-play .play {
+.demo-play .demo:focus,
+.demo-play .demo:hover {
+    background: var(--blue);
+}
+
+.demo-play .play,
+.demo-play .play:focus,
+.demo-play .play:hover {
+    background: var(--orange);
+}
+.demo-play .demo,
+.demo-play .play{
     width: var(--button-width);
 }
 
-/* Highlight styles */
 .highlights {
     background: var(--blue);
     width: var(--highlights-width);
 }
-
-/* Styles for hidden info */
-.info-hide {
+.info-hide{
     background: var(--light-gray);
 }
-
-.info-hide p {
-    font-size: 15px;
+.info-hide p{
+    font-size:15px;
 }
-
-/* Cursor style for icons */
 .icons {
     cursor: pointer;
 }
-
-/* Container for hidden info */
 .info-hide-container {
-    display: none;
+    display: none; /* Initially hide */
     margin-top: -50px;
-    z-index: 5;
+    z-index:5;
+}
+.game-description{
+    z-index: -1;
 }
 
-/* Show hidden info on icon hover */
 .icons:hover + .info-hide-container {
-    display: block;
+    display: block; /* Show when the icon is hovered */
+}
+/*END*/
+
+/*CASINO GAMES Carousel*/
+#casinogames .slick-prev {
+    top: 90px;
+    z-index: 1;
 }
 
-/* Responsive styles */
-@media (max-width: 1300px) {
-    /* Adjust font sizes for smaller screens */
-    .info-hide p {
-        font-size: 11px;
-    }
+#casinogames .slick-next {
+    top: 90px;
+}
+/*END*/
 
-    .title,
-    .game-description p {
-        font-size: 13px;
+/*CASINO GAMES Carousel*/
+#instantgames .slick-prev {
+    top: 90px;
+    z-index: 1;
+}
+
+#instantgames .slick-next {
+    top: 90px;
+}
+/*END*/
+
+/*OVERALL STYLES*/
+.main-container{
+    padding:20px 0;
+}
+
+.title{
+    font-size:15px;
+}
+.game-description p{
+    font-size:13px;
+}
+.hot {
+    background: var(--orange);
+}
+
+.new {
+    background: var(--red);
+}
+.hot,
+.new {
+    padding: 2px 8px;
+    font-size: 13px;
+}
+
+@media (max-width: 1300px){
+    /*Popular Games Carousel*/
+    .info-hide p{
+        font-size:11px;
     }
+    .title{
+        font-size:13px;
+    }
+    .game-description p{
+        font-size:11px;
+    }
+    /*END*/
 }
 
 @media (max-width: 600px) {
-    /* Adjust carousel dot position */
+    /* Banner Carousel */
     .slick-dots {
         left: 28px;
     }
 
-    /* Adjust size and color of active carousel dots */
     .slick-dots li.slick-active button:before {
         background-color: var(--red);
         width: 20px;
         height: 5px;
     }
-
-    /* Adjust padding for main container */
-    .main-container {
-        padding: 25px 15px;
+    /*END*/
+    /* Promotion Carousel */
+    .slick-prev {
+        left: 0;
     }
+
+    .slick-next {
+        right: 0;
+    }
+    /*END*/
+
+    /* Popular Games Carousel */
+    .main-container{
+        padding:25px 15px;
+    }
+    /*END*/
+    
+}
+
+@media (max-width: 500px) {
+    
 }
