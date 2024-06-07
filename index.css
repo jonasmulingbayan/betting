@@ -256,11 +256,11 @@ h1, h2, h3, p, span, a{
     /*END*/
     /* Promotion Carousel */
     .slick-prev {
-        left: 0;
+        left: 15px;
     }
 
     .slick-next {
-        right: 0;
+        right: 15px;
     }
     /*END*/
 
