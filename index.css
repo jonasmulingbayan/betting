@@ -6,6 +6,7 @@
     --light-gray: #dbe9f0;
     --medium-gray: rgba(245, 245, 245, 0.6);
     --gray: #ddd;
+    --very-light-gray: #f3f5f6;
     --yellow: #ffc201;
     --white: #fff;
     --black: #000;
@@ -196,6 +197,33 @@ h1, h2, h3, p, span, a {
     top: 80px;
 }
 
+
+/*OUR PARTNERS CAROUSEL*/
+.partners-main-container{
+    padding:0 60px;
+}
+#partners{
+    background: var(--very-light-gray);
+    padding: 5px;
+    border-radius: 5px;
+}
+.partners-container{
+    width: 100%;
+    display:flex !important;
+    justify-content: center;
+    align-items: center;
+    margin:5px;
+    background: var(--white);
+    border-radius: 5px;
+}
+.partners-container img{
+    width:120px;
+    height: 60px;
+    
+    
+}
+
+/*END*/
 /* Overall Styles */
 .main-container {
     padding: 20px 0;
@@ -230,6 +258,8 @@ h1, h2, h3, p, span, a {
     padding: 2px 8px;
     font-size: 13px;
 }
+
+
 
 /* Responsive Styles */
 @media (max-width: 1300px) {
@@ -275,6 +305,9 @@ h1, h2, h3, p, span, a {
 
     .slider-container {
         padding: 0 30px;
+    }
+    .partners-main-container{
+        padding:0 35px;
     }
 }
 

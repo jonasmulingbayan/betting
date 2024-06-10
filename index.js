@@ -198,6 +198,43 @@ $(document).ready(function(){
         });
     }
 
+    $('#partners').slick({
+        infinite: false,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: false,
+        dots: false,
+        centerMode: false, // Set centerMode to false
+        centerPadding: '0px', // Adjust the center padding
+        responsive: [
+            {
+                breakpoint: 1500,
+                settings: {
+                    slidesToShow: 5,
+                }
+            },
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                }
+            }
+        ]
+    });
 
     const iconsList = document.querySelectorAll('.icons');
 
