@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    // Initialize banner slider
     $('#banner').slick({
         infinite: false,
         slidesToShow: 1,
@@ -9,6 +10,7 @@ $(document).ready(function(){
         dots: true,
     });
 
+    // Initialize promotion slider
     $('#promotion').slick({
         infinite: false,
         slidesToShow: 4,
@@ -47,167 +49,73 @@ $(document).ready(function(){
         ]
     });
 
-    var $populargamesSlider = $('#populargames');
+    // Function to initialize slick sliders
+    function initializeSlickSlider(selector, slidesToShow, slidesToScroll) {
+        var $slider = $(selector);
 
-    // Check if #populargames slider exists
-    if ($populargamesSlider.length > 0) {
-        // Initialize the slick slider
-        $populargamesSlider.slick({
-            infinite: false,
-            slidesToShow: 5,
-            slidesToScroll: 5,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            arrows: true,
-            dots: false,
-            prevArrow: '<button type="button" class="slick-prev"></button>',
-            nextArrow: '<button type="button" class="slick-next"></button>',
-            centerMode: false, // Set centerMode to false
-            centerPadding: '0px', // Adjust the center padding
-            responsive: [
-                {
-                    breakpoint: 1500,
-                    settings: {
-                        slidesToShow: 5,
-                        slidesToScroll: 5,
+        if ($slider.length > 0) {
+            $slider.slick({
+                infinite: false,
+                slidesToShow: slidesToShow,
+                slidesToScroll: slidesToScroll,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: true,
+                dots: false,
+                prevArrow: '<button type="button" class="slick-prev"></button>',
+                nextArrow: '<button type="button" class="slick-next"></button>',
+                centerMode: false,
+                centerPadding: '0px',
+                responsive: [
+                    {
+                        breakpoint: 1500,
+                        settings: {
+                            slidesToShow: slidesToShow,
+                            slidesToScroll: slidesToScroll,
+                        }
+                    },
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: slidesToShow - 1,
+                            slidesToScroll: slidesToScroll - 1,
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: slidesToShow - 2,
+                            slidesToScroll: slidesToScroll - 2,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: slidesToShow - 3,
+                            slidesToScroll: slidesToScroll - 3,
+                        }
                     }
-                },
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 4,
-                    }
-                },
-                {
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                    }
-                }
-            ]
-        });
+                ]
+            });
+        }
     }
 
+    // Initialize populargames, casinogames, and instantgames sliders
+    initializeSlickSlider('#populargames', 5, 5);
+    initializeSlickSlider('#casinogames', 5, 5);
+    initializeSlickSlider('#instantgames', 5, 5);
 
-    var $casinogamesSlider = $('#casinogames');
-
-    // Check if #casino slider exists
-    if ($casinogamesSlider.length > 0) {
-        // Initialize the slick slider
-        $casinogamesSlider.slick({
-            infinite: false,
-            slidesToShow: 5,
-            slidesToScroll: 5,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            arrows: true,
-            dots: false,
-            prevArrow: '<button type="button" class="slick-prev"></button>',
-            nextArrow: '<button type="button" class="slick-next"></button>',
-            centerMode: false, // Set centerMode to false
-            centerPadding: '0px', // Adjust the center padding
-            responsive: [
-                {
-                    breakpoint: 1500,
-                    settings: {
-                        slidesToShow: 5,
-                        slidesToScroll: 5,
-                    }
-                },
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 4,
-                    }
-                },
-                {
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                    }
-                }
-            ]
-        });
-    }
-
-    var $instantgamesSlider = $('#instantgames');
-
-    // Check if #casino slider exists
-    if ($instantgamesSlider.length > 0) {
-        // Initialize the slick slider
-        $instantgamesSlider.slick({
-            infinite: false,
-            slidesToShow: 5,
-            slidesToScroll: 5,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            arrows: true,
-            dots: false,
-            prevArrow: '<button type="button" class="slick-prev"></button>',
-            nextArrow: '<button type="button" class="slick-next"></button>',
-            centerMode: false, // Set centerMode to false
-            centerPadding: '0px', // Adjust the center padding
-            responsive: [
-                {
-                    breakpoint: 1500,
-                    settings: {
-                        slidesToShow: 5,
-                        slidesToScroll: 5,
-                    }
-                },
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 4,
-                    }
-                },
-                {
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                    }
-                }
-            ]
-        });
-    }
-
+    // Initialize partners slider
     $('#partners').slick({
-        infinite: false,
+        infinite: true,
         slidesToShow: 6,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 3000,
         arrows: false,
         dots: false,
-        centerMode: false, // Set centerMode to false
-        centerPadding: '0px', // Adjust the center padding
+        centerMode: false,
+        centerPadding: '0px',
         responsive: [
             {
                 breakpoint: 1500,
@@ -236,6 +144,46 @@ $(document).ready(function(){
         ]
     });
 
+    // Initialize promotion slider
+    $('#testimonial').slick({
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: true,
+        dots: false,
+        prevArrow: '<button type="button" class="slick-prev"></button>',
+        nextArrow: '<button type="button" class="slick-next"></button>',
+        responsive: [
+            {
+                breakpoint: 1500,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 998,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
+    // Hover effect for icons in populargames description
     const iconsList = document.querySelectorAll('.icons');
 
     iconsList.forEach(icon => {
@@ -252,6 +200,7 @@ $(document).ready(function(){
         });
     });
 
+    // Function to position info hide container
     function positionInfoHideContainer(container, desc) {
         container.style.top = 0;
         container.style.left = 0;
@@ -260,5 +209,4 @@ $(document).ready(function(){
         container.style.background = 'rgba(0, 0, 0, 0.5)';
         container.style.zIndex = '9999';
     }
-
 });

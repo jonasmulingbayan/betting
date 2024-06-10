@@ -188,9 +188,11 @@ h1, h2, h3, p, span, a {
     display: block;
 }
 
+#testimonial .slick-prev,
 #populargames .slick-prev,
 #casinogames .slick-prev,
 #instantgames .slick-prev,
+#testimonial .slick-next,
 #populargames .slick-next,
 #casinogames .slick-next,
 #instantgames .slick-next {
@@ -199,30 +201,50 @@ h1, h2, h3, p, span, a {
 
 
 /*OUR PARTNERS CAROUSEL*/
-.partners-main-container{
-    padding:0 60px;
-}
 #partners{
     background: var(--very-light-gray);
-    padding: 5px;
-    border-radius: 5px;
 }
 .partners-container{
-    width: 100%;
-    display:flex !important;
-    justify-content: center;
-    align-items: center;
-    margin:5px;
     background: var(--white);
-    border-radius: 5px;
 }
 .partners-container img{
     width:120px;
     height: 60px;
-    
-    
 }
+/*END*/
 
+/*TESTIMONIAL CAROUSEL*/
+.partners-main-container,
+.testimonial-main-container{
+    padding:0 60px;
+}
+.testimonial-containers{
+    background: var(--very-light-gray);
+    padding:35px 30px;
+}
+.testimonial-item{
+    margin: 25px;
+    padding:30px 10px !important;
+}
+#testimonial .slick-slide.slick-active {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
+}
+.testimonial-item p{
+    width: 80%;
+}
+.rating-stars i{
+    color: var(--yellow);
+}
+#testimonial .slick-prev,
+#testimonial .slick-next{
+top:50%;
+}
+#testimonial .slick-prev{
+left:5px;
+}
+#testimonial .slick-next{
+right: 5px;
+}
 /*END*/
 /* Overall Styles */
 .main-container {
@@ -275,7 +297,11 @@ h1, h2, h3, p, span, a {
         font-size: 11px;
     }
 }
-
+@media(max-width:700px){
+    .testimonial-containers{
+        padding:20px 15px;
+    }
+}
 @media (max-width: 600px) {
     .slick-dots {
         left: 28px;
@@ -306,8 +332,18 @@ h1, h2, h3, p, span, a {
     .slider-container {
         padding: 0 30px;
     }
-    .partners-main-container{
+    .partners-main-container,
+    .testimonial-main-container{
         padding:0 35px;
+    }
+    .testimonial-item{
+        padding:20px 10px !important;
+    }
+    #testimonial .slick-prev{
+        left:0;
+    }
+    #testimonial .slick-next{
+        right:0;
     }
 }
 
@@ -320,4 +356,6 @@ h1, h2, h3, p, span, a {
     #instantgames .slick-next {
         top: 70px;
     }
+
+    
 }
