@@ -196,7 +196,7 @@ h1, h2, h3, p, span, a {
 #populargames .slick-next,
 #casinogames .slick-next,
 #instantgames .slick-next {
-    top: 80px;
+    top:110px ;
 }
 
 /* OUR PARTNERS CAROUSEL */
@@ -232,7 +232,7 @@ h1, h2, h3, p, span, a {
     margin-top: 10px; /* Adjust spacing between text and border */
 }
 .testimonial-containers {
-    padding: 35px 30px;
+    padding: 10px 30px;
 }
 
 .testimonial-item {
@@ -284,11 +284,11 @@ h1, h2, h3, p, span, a {
 }
 
 #testimonial .slick-prev {
-    left: 5px;
+    left: 0;
 }
 
 #testimonial .slick-next {
-    right: 5px;
+    right: 0;
 }
 
 /* END */
@@ -387,14 +387,6 @@ h1, h2, h3, p, span, a {
 
     .testimonial-item {
         padding: 20px 10px !important;
-    }
-
-    #testimonial .slick-prev {
-        left: 0;
-    }
-
-    #testimonial .slick-next {
-        right: 0;
     }
 }
 
