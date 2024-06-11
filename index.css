@@ -238,11 +238,11 @@ h1, h2, h3, p, span, a {
 .testimonial-item {
     background: var(--very-light-gray);
     margin: 25px;
-    padding: 30px 10px !important;
+    padding: 25px 10px !important;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 300px; /* Ensure a minimum height */
+    min-height: 250px; /* Ensure a minimum height */
 }
 
 #testimonial .slick-center {
