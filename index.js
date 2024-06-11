@@ -144,9 +144,9 @@ $(document).ready(function(){
         ]
     });
 
-    // Initialize promotion slider
+    // Initialize testimonial slider
     $('#testimonial').slick({
-        infinite: false,
+        infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
@@ -155,6 +155,8 @@ $(document).ready(function(){
         dots: false,
         prevArrow: '<button type="button" class="slick-prev"></button>',
         nextArrow: '<button type="button" class="slick-next"></button>',
+        centerMode: true,
+        centerPadding: "0",
         responsive: [
             {
                 breakpoint: 1500,

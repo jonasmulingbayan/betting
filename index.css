@@ -199,53 +199,100 @@ h1, h2, h3, p, span, a {
     top: 80px;
 }
 
-
-/*OUR PARTNERS CAROUSEL*/
-#partners{
+/* OUR PARTNERS CAROUSEL */
+#partners {
     background: var(--very-light-gray);
 }
-.partners-container{
+
+.partners-container {
     background: var(--white);
 }
-.partners-container img{
-    width:120px;
+
+.partners-container img {
+    width: 120px;
     height: 60px;
 }
-/*END*/
 
-/*TESTIMONIAL CAROUSEL*/
+/* END */
+
+/* TESTIMONIAL CAROUSEL */
 .partners-main-container,
-.testimonial-main-container{
-    padding:0 60px;
+.testimonial-main-container {
+    padding: 0 60px;
 }
-.testimonial-containers{
+
+.title-header h4{
+    color: var(--yellow);
+    font-weight: 900;
+}
+.title-header h4::after {
+    content: ''; /* Required for the pseudo-element to appear */
+    display: block; /* Ensures the pseudo-element takes up space */
+    border-bottom: 4px solid var(--yellow); /* Example border bottom style */
+    margin-top: 10px; /* Adjust spacing between text and border */
+}
+.testimonial-containers {
+    padding: 35px 30px;
+}
+
+.testimonial-item {
     background: var(--very-light-gray);
-    padding:35px 30px;
-}
-.testimonial-item{
     margin: 25px;
-    padding:30px 10px !important;
+    padding: 30px 10px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px; /* Ensure a minimum height */
 }
-#testimonial .slick-slide.slick-active {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Adjust the values as needed */
+
+#testimonial .slick-center {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5) !important; /* Adjust the values as needed */
 }
-.testimonial-item p{
-    width: 80%;
-}
-.rating-stars i{
+
+.testimonial-item .quot {
     color: var(--yellow);
 }
+
+.testimonial-item .testimonial-description {
+    width: 80%;
+    flex: 0 0 100px; /* Fixed height of 100px for the description */
+    overflow: hidden; /* Hide overflow text if it exceeds the fixed height */
+}
+
+.rating-stars {
+    flex: 0 0 auto;
+}
+
+.testimonial-item h5 {
+    color: var(--yellow);
+    flex: 0 0 auto;
+    margin-top: auto; /* Pushes the name to the bottom */
+}
+
+.testimonial-item h5 .name {
+    color: var(--black);
+    font-size: 14px;
+}
+
+.rating-stars i {
+    color: var(--yellow);
+}
+
 #testimonial .slick-prev,
-#testimonial .slick-next{
-top:50%;
+#testimonial .slick-next {
+    top: 50%;
 }
-#testimonial .slick-prev{
-left:5px;
+
+#testimonial .slick-prev {
+    left: 5px;
 }
-#testimonial .slick-next{
-right: 5px;
+
+#testimonial .slick-next {
+    right: 5px;
 }
-/*END*/
+
+/* END */
+
 /* Overall Styles */
 .main-container {
     padding: 20px 0;
@@ -281,8 +328,6 @@ right: 5px;
     font-size: 13px;
 }
 
-
-
 /* Responsive Styles */
 @media (max-width: 1300px) {
     .info-hide p {
@@ -297,11 +342,13 @@ right: 5px;
         font-size: 11px;
     }
 }
-@media(max-width:700px){
-    .testimonial-containers{
-        padding:20px 15px;
+
+@media (max-width: 700px) {
+    .testimonial-containers {
+        padding: 20px 15px;
     }
 }
+
 @media (max-width: 600px) {
     .slick-dots {
         left: 28px;
@@ -332,18 +379,22 @@ right: 5px;
     .slider-container {
         padding: 0 30px;
     }
+
     .partners-main-container,
-    .testimonial-main-container{
-        padding:0 35px;
+    .testimonial-main-container {
+        padding: 0 35px;
     }
-    .testimonial-item{
-        padding:20px 10px !important;
+
+    .testimonial-item {
+        padding: 20px 10px !important;
     }
-    #testimonial .slick-prev{
-        left:0;
+
+    #testimonial .slick-prev {
+        left: 0;
     }
-    #testimonial .slick-next{
-        right:0;
+
+    #testimonial .slick-next {
+        right: 0;
     }
 }
 
@@ -356,6 +407,4 @@ right: 5px;
     #instantgames .slick-next {
         top: 70px;
     }
-
-    
 }
